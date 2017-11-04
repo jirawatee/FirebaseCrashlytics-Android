@@ -17,7 +17,7 @@ Firebase Crashlytics code guideline for Android developers
 ## Screenshots
 <table width="100%">
 	<tr>
-	  <th><img src="https://user-images.githubusercontent.com/1763410/32402146-0f57d37a-c150-11e7-871a-a4384d95b735.png" width="100%"></th>
+	  <th><img src="https://user-images.githubusercontent.com/1763410/32402146-0f57d37a-c150-11e7-871a-a4384d95b735.png" width="50%"></th>
 	</tr>
 </table>
 
