@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<color name="colorPrimary">#039be5</color>
+	<color name="colorPrimaryDark">#0288d1</color>
+	<color name="colorAccent">#fb8c00</color>
+
+	<style name="ThemeOverlay.MyButton" parent="ThemeOverlay.AppCompat.Dark">
+		<item name="colorButtonNormal">@color/colorAccent</item>
+	</style>
+
+	<style name="MyButton">
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:theme">@style/ThemeOverlay.MyButton</item>
+		<item name="android:textAllCaps">false</item>
+		<item name="android:layout_weight">1</item>
+	</style>
+
+</resources>

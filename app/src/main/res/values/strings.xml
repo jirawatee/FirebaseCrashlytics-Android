@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">Crashlytics</string>
+	<string name="btn_force">Force a Crash</string>
+	<string name="btn_exception">Throw Exception</string>
+</resources>
