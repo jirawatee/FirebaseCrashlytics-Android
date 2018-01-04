@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.Button;
 
 import com.crashlytics.android.Crashlytics;
 
@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		bindWidget();
 
 		Fabric.with(this, new Crashlytics());
 		Crashlytics.log("Start logging!");
@@ -33,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		Crashlytics.setInt("key5", 999);
 		Crashlytics.setLong("key6", System.currentTimeMillis());
 
+		bindWidget();
 	}
 
 	private void bindWidget() {
@@ -48,12 +48,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 				Crashlytics.getInstance().crash();
 				break;
 			case R.id.btn_exception:
+				/*
 				try {
 					throw new NullPointerException();
 				} catch (NullPointerException ex) {
 					Crashlytics.logException(ex);
 					Toast.makeText(this, ex.toString(), Toast.LENGTH_LONG).show();
 				}
+				*/
+				Button btn = findViewById(R.id.btn_exception);
+				btn.setTextColor(null);
 				break;
 		}
 	}
