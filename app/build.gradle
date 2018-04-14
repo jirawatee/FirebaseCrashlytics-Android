@@ -9,8 +9,8 @@ android {
 		applicationId "com.example.crashlytics"
 		minSdkVersion compileAndTargetVersion
 		targetSdkVersion compileAndTargetVersion
-		versionCode 1
-		versionName "1.0"
+		versionCode 10
+		versionName "2.0"
 		resConfigs('en', 'xxxhdpi')
 		ndk {
 			abiFilters "x86", "x86_64", "arm64-v8a", "armeabi-v7a"
@@ -37,13 +37,13 @@ android {
 }
 
 dependencies {
-	implementation('com.android.support:appcompat-v7:27.1.0') {
+	implementation('com.android.support:appcompat-v7:27.1.1') {
 		force = true
 	}
 	implementation('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') {
 		transitive = true
 	}
-	implementation 'com.google.firebase:firebase-core:12.0.0'
+	implementation 'com.google.firebase:firebase-core:15.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
