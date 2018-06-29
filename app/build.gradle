@@ -7,7 +7,7 @@ android {
 
 	defaultConfig {
 		applicationId "com.example.crashlytics"
-		minSdkVersion compileAndTargetVersion
+		minSdkVersion 27
 		targetSdkVersion compileAndTargetVersion
 		versionCode 12
 		versionName "2.2"
@@ -40,8 +40,8 @@ dependencies {
 	implementation('com.android.support:appcompat-v7:27.1.1') {
 		force = true
 	}
-	implementation 'com.crashlytics.sdk.android:crashlytics:2.9.3'
-	implementation 'com.google.firebase:firebase-core:16.0.0'
+	implementation 'com.crashlytics.sdk.android:crashlytics:2.9.4'
+	implementation 'com.google.firebase:firebase-core:16.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'
