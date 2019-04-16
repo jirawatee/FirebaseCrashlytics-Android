@@ -41,7 +41,7 @@ dependencies {
 		force = true
 	}
 	implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
-	implementation 'com.google.firebase:firebase-core:16.0.7'
+	implementation 'com.google.firebase:firebase-core:16.0.8'
 }
 
 apply plugin: 'com.google.gms.google-services'
