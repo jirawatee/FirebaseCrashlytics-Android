@@ -23,5 +23,5 @@ task clean(type: Delete) {
 }
 
 ext {
-	compileAndTargetVersion = 28
+	compileAndTargetVersion = 29
 }
