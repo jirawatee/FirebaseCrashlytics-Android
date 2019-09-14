@@ -37,9 +37,9 @@ android {
 }
 
 dependencies {
-	implementation 'androidx.appcompat:appcompat:1.0.2'
+	implementation 'androidx.appcompat:appcompat:1.1.0'
 	implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
-	implementation 'com.google.firebase:firebase-core:17.1.0'
+	implementation 'com.google.firebase:firebase-core:17.2.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
