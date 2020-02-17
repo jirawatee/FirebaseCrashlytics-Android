@@ -1,36 +1,34 @@
 package com.example.crashlytics;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.crashlytics.android.Crashlytics;
+import androidx.appcompat.app.AppCompatActivity;
 
-import io.fabric.sdk.android.Fabric;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 	private static final String TAG = MainActivity.class.getSimpleName();
+	private FirebaseCrashlytics crashlytics;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		Fabric.with(this, new Crashlytics());
-		Crashlytics.log("Start logging!");
+		crashlytics = FirebaseCrashlytics.getInstance();
+		crashlytics.log("Start logging!");
 
-		Crashlytics.setUserIdentifier("id-99999");
-		Crashlytics.setUserName("FirebaseThailand");
-		Crashlytics.setUserEmail("firebasethailand@gmail.com");
+		crashlytics.setUserId("id-99999");
+		crashlytics.setCustomKey("DisplayName", "FirebaseThailand");
+		crashlytics.setCustomKey("Email", "firebasethailand@gmail.com");
 
-		Crashlytics.setString("key1", "value1");
-		Crashlytics.setBool("key2", true);
-		Crashlytics.setDouble("key3", 99.99);
-		Crashlytics.setFloat("key4", 999.99f);
-		Crashlytics.setInt("key5", 999);
-		Crashlytics.setLong("key6", System.currentTimeMillis());
+		crashlytics.setCustomKey("key", "value");
+		crashlytics.setCustomKey(TAG, true);
+		crashlytics.setCustomKey("integer", 1234);
+		crashlytics.setCustomKey("float", 567.89f);
+		crashlytics.setCustomKey("timestamp", System.currentTimeMillis());
 
 		bindWidget();
 	}
@@ -44,9 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	public void onClick(View view) {
 		switch (view.getId()) {
 			case R.id.btn_force:
-				Crashlytics.log(Log.DEBUG, TAG, "Log some message before a crash happen");
-				Crashlytics.getInstance().crash();
-				break;
+				crashlytics.log("Log some message before a crash happen");
+				throw new RuntimeException("Test Crash");
 			case R.id.btn_exception:
 				/*
 				try {
